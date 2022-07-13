@@ -5,8 +5,8 @@ import Character from "./Character";
 const NavPage = (props) => {
     return (
         <header className="d-flex justify-content-between align-items-center">
-            <p>Page: {props.page}</p>
             <button  className="btn btn-primary btn-sm" onClick={()=> props.setPage(props.page - 1)}>Back</button>
+            <p>Current Page: {props.page}</p>
             <button className="btn btn-primary btn-sm" onClick={() => props.setPage(props.page + 1)}>
                 Page {props.page + 1}
             </button>
@@ -45,10 +45,8 @@ const CharacterList = () => {
                         {
                             characters.map((character) => {
                                 return (
-                                    <div className="col-md-4">
-
-                                        <Character key={character.id}
-                                            name={character.name} image={character.image} origin={character.origin.name} />
+                                    <div className="col-md-4" key={character.id}>
+                                        <Character character={character} />
                                     </div>
                                 )
                             })

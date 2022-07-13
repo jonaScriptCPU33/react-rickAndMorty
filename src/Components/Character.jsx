@@ -1,10 +1,14 @@
-function Character({ name,image, origin}) {
+function Character({character}) {
 
+if(!character){
+    return null
+}
     return (
         <div className="text-center p-5">
-            <h2>{name}</h2>
-            <img className="img-fluid rounded-pill" src={image} alt={name} />
-            <p className="">{origin}</p>
+            <h2>{character.name}</h2>
+            
+            <img className="img-fluid rounded-pill" src={character.image} alt={character.name} />
+            <p className="">{character.origin.name}</p>
         </div>
     );
 }
